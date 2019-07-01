@@ -1,0 +1,22 @@
+<loading *ngIf="loading"></loading>
+<div *ngIf="error" class="alert alert-danger">
+  <h5>Error</h5>
+  <p>
+    {{ Error }}
+  </p>
+</div>
+<div *ngIf="!error && !loading" class="search">
+  <div *ngIf="artists.length == 0 && tracks.length == 0; else notFound">
+    <h3><i class="fa fa-search"></i>No results found for "{{ search }}"</h3>
+  </div>
+  <ng-template #notFound>
+    <div *ngIf="artists.length != 0" class="artist-table">
+      <h4>Artists found</h4>
+      <artist-table [items]="artists"></artist-table>
+    </div>
+    <div *ngIf="tracks.length != 0">
+      <h4>Tracks found</h4>
+      <track-table [items]="tracks"></track-table>
+    </div>
+  </ng-template>
+</div>

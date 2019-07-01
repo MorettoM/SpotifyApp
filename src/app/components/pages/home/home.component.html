@@ -1,0 +1,29 @@
+<loading *ngIf="loading"></loading>
+<div *ngIf="error" class="alert alert-danger">
+  <h3>Error</h3>
+  <p>
+    {{ Error }}
+  </p>
+</div>
+<div *ngIf="!loading">
+  <div
+    *ngIf="!error && !loading && favoriteTracks != 0; else noFavs"
+    class="favs"
+  >
+    <h1>Favorite Tracks</h1>
+    <track-table [items]="favoriteTracks"></track-table>
+  </div>
+  <ng-template #noFavs>
+    <h1>You have 0 favorite tracks</h1>
+    <div>
+      <h3 (click)="focusSearch()">
+        <i class="fa fa-search"></i>Start searching for your favorite aritsts
+        and tracks!
+      </h3>
+    </div>
+  </ng-template>
+  <div *ngIf="arTOP.length != 0">
+    <h2>TOP 50: <span>Argentina</span></h2>
+    <playlist-table [items]="arTOP"></playlist-table>
+  </div>
+</div>

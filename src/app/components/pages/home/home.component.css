@@ -1,0 +1,51 @@
+h1 {
+  color: #1c8a40;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+  text-align: centeR;
+  margin: 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 7vw;
+}
+h3 {
+  color: lightgray;
+  font-size: 4vw;
+  font-family: "Montserrat", sans-serif;
+  text-align: centeR;
+  margin: 40px 0;
+  cursor: pointer;
+}
+h2 {
+  color: #1c8a40;
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
+    0px -5px 35px rgba(255, 255, 255, 0.3);
+  text-align: centeR;
+  margin: 20px 0;
+  margin-top: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 4vw;
+}
+h2 span {
+  background: -webkit-linear-gradient(
+    rgba(173, 232, 255, 1) 0%,
+    rgba(102, 214, 255, 1) 0%,
+    rgba(10, 198, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(10, 198, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 10vw;
+  }
+  h2 {
+    font-size: 6vw;
+  }
+  h3 {
+    font-size: 6vw;
+  }
+}

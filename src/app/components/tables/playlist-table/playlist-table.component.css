@@ -1,0 +1,124 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #1c8a40;
+  color: white;
+}
+
+tr:hover {
+  background-color: #1c8a40;
+}
+th:nth-child(2) {
+  text-align: center;
+}
+th:nth-child(5) i:first-child:after {
+  content: "Duration";
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+td:first-child {
+  width: 5px;
+}
+td:nth-child(2) {
+  width: 10%;
+  text-align: center;
+}
+td a {
+  text-decoration: none;
+  color: white;
+}
+td:nth-child(4) a:not(:last-child):after {
+  content: ",";
+}
+.track-artist {
+  display: none;
+}
+td {
+  width: 33.3%;
+}
+td i {
+  cursor: pointer;
+}
+td img {
+  width: 40px;
+  height: 40px;
+}
+td a {
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+td a:hover {
+  font-weight: bold;
+}
+td .artists {
+  display: inline;
+  margin-right: 5px;
+}
+.image-play {
+  position: relative;
+}
+.image-play img {
+  text-align: center;
+}
+.play-button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  opacity: 0.08;
+}
+.play-button:hover {
+  color: white;
+  opacity: 1;
+}
+.fa-chevron-up,
+.fa-chevron-down {
+  cursor: pointer;
+}
+@media only screen and (max-width: 500px) {
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: none;
+  }
+  td:nth-child(3),
+  th:nth-child(3) {
+    color: white;
+    margin-top: auto;
+  }
+  .track-artist {
+    display: block;
+    color: lightgray !important;
+    font-style: italic !important;
+    font-weight: lighter !important;
+    margin-bottom: 0;
+  }
+  th:nth-child(4),
+  td:nth-child(4) {
+    display: none;
+  }
+  th:nth-child(5) i:first-child:after {
+    content: "Dur";
+    font-weight: bold;
+    font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  }
+  .play-button {
+    font-size: 1.8em;
+  }
+  td {
+    font-size: 10px;
+  }
+  td:not(:first-child) {
+    width: auto;
+  }
+  td:first-child {
+    width: 5%;
+  }
+  th {
+    font-size: 10px;
+  }
+}

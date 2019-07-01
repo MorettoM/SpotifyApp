@@ -1,0 +1,57 @@
+<table>
+  <thead>
+    <th><i class="fa fa-heart"></i></th>
+    <th><i class="fa fa-image"></i></th>
+    <th>Track</th>
+    <th>Artists</th>
+    <th>
+      <i class="fa fa-chevron-up" (click)="sortTable('up')"></i
+      ><i class="fa fa-chevron-down" (click)="sortTable('down')"></i>
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let track of items">
+      <td>
+        <i
+          *ngIf="favSongs.includes(track.id); else plus"
+          (click)="setToFav(track.id)"
+          class="fa fa-check"
+        ></i>
+        <ng-template #plus>
+          <i (click)="setToFav(track.id)" class="fa fa-plus"></i>
+        </ng-template>
+      </td>
+      <td>
+        <div class="image-play">
+          <img
+            *ngIf="track.album; else albumTrack"
+            [src]="track.album.images | formatNoImage"
+          />
+          <ng-template #albumTrack>
+            <img [src]="albImage" />
+          </ng-template>
+          <i
+            (click)="playSong(track)"
+            class="fa fa-play-circle fa-2x play-button"
+          ></i>
+        </div>
+      </td>
+      <td>
+        <a (click)="playSong(track)">{{ track.name | cutString }}</a>
+        <a href="/artist?id={{ track.artists[0].id }}" class="track-artist">{{
+          track.artists[0].name
+        }}</a>
+      </td>
+      <td>
+        <a
+          *ngFor="let artist of track.artists"
+          class="artists"
+          href="/artist?id={{ artist.id }}"
+          >{{ artist.name }}</a
+        >
+      </td>
+      <td>{{ track.duration_ms | formatDuration }}</td>
+    </tr>
+  </tbody>
+</table>
+<Playbar [song]="actualSong"></Playbar>

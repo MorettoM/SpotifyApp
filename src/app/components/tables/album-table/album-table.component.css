@@ -1,0 +1,91 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #1c8a40;
+  color: white;
+}
+
+tr:hover {
+  background-color: #1c8a40;
+}
+td {
+  width: 50%;
+}
+th:first-child {
+  text-align: center;
+}
+td:first-child {
+  width: 40px;
+}
+td i {
+  cursor: pointer;
+}
+td img {
+  width: 40px;
+  height: 40px;
+}
+td a {
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  color: white;
+  text-decoration: none;
+}
+td a:hover {
+  font-weight: bold;
+}
+td .artists {
+  display: inline;
+  margin-right: 5px;
+}
+.image-play {
+  position: relative;
+}
+.play-button {
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  opacity: 0.08;
+}
+.play-button:hover {
+  color: white;
+  opacity: 1;
+}
+.album-artist {
+  display: none;
+}
+@media only screen and (max-width: 500px) {
+  .album-artist {
+    display: block;
+    color: lightgray !important;
+    font-style: italic !important;
+    font-weight: lighter !important;
+    margin-bottom: 0;
+  }
+  th:nth-child(4),
+  th:nth-child(3),
+  td:nth-child(4),
+  td:nth-child(3) {
+    display: none;
+  }
+  td a {
+    font-size: 12px;
+  }
+  td:not(:first-child) {
+    width: 15%;
+  }
+  td:first-child {
+    width: 5%;
+  }
+  th {
+    font-size: 10px;
+  }
+  th:first-child {
+    text-align: left;
+  }
+}

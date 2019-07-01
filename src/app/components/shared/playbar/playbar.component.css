@@ -1,0 +1,20 @@
+@keyframes appear {
+  from {
+    height: 0;
+  }
+  to {
+    height: 80px;
+  }
+}
+.music-player {
+  display: flex;
+  height: 80px;
+  background-color: #151617;
+  position: fixed;
+  width: 100%;
+  bottom: 0%;
+  left: 0%;
+  z-index: 5;
+  animation-name: appear;
+  animation-duration: 2s;
+}

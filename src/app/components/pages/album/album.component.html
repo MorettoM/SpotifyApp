@@ -1,0 +1,17 @@
+<loading *ngIf="loading"></loading>
+<div *ngIf="error" class="alert alert-danger">
+  <h3>Error</h3>
+  <p>
+    {{ Error }}
+  </p>
+</div>
+<div *ngIf="!error && !loading && album" class="album-page">
+  <div class="album-info">
+    <img [src]="album.images | formatNoImage" class="album-image" />
+    <h1 class="album-name">{{ album.name | cutString }}</h1>
+  </div>
+  <track-table
+    [items]="tracks.items"
+    [albImage]="album.images[0].url"
+  ></track-table>
+</div>

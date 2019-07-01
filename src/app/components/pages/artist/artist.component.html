@@ -1,0 +1,21 @@
+<loading *ngIf="loading"></loading>
+<div *ngIf="error" class="alert alert-danger">
+  <h3>Error</h3>
+  <p>
+    {{ Error }}
+  </p>
+</div>
+<div *ngIf="!error && !loading" class="artist-page">
+  <div class="artist-info">
+    <img
+      *ngIf="artist.images.length == 0; else showImage"
+      src="../../../../assets/img/no-image.png"
+      class="artist-image"
+    />
+    <ng-template #showImage>
+      <img class="artist-image" [src]="artist.images[0].url" />
+    </ng-template>
+    <h1 class="artist-name">{{ artist.name | cutString }}</h1>
+  </div>
+  <album-table [albums]="albums"></album-table>
+</div>

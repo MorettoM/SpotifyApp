@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th><i class="fa fa-image"></i></th>
+    <th>Artist</th>
+    <th>Popularity</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let artist of items">
+      <td>
+        <img [src]="artist.images | formatNoImage" />
+      </td>
+      <td>
+        <a href="/artist?id={{ artist.id }}">{{ artist.name | cutString }}</a>
+      </td>
+      <td>{{ artist.popularity }}</td>
+    </tr>
+  </tbody>
+</table>

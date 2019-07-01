@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <th><i class="fa fa-image"></i></th>
+    <th>Album</th>
+    <th>Artists</th>
+    <th>Tracks</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let album of albums">
+      <td>
+        <img [src]="album.images | formatNoImage" />
+      </td>
+      <td>
+        <a href="/album?id={{ album.id }}">{{ album.name | cutString }}</a>
+        <a href="/artist?id={{ album.artists[0].id }}" class="album-artist">{{
+          album.artists[0].name
+        }}</a>
+      </td>
+      <td>
+        <a
+          *ngFor="let artist of album.artists | slice: 0:3"
+          class="artists"
+          href="/artist?id={{ artist.id }}"
+          >{{ artist.name | cutString }}</a
+        >
+      </td>
+      <td>{{ album.total_tracks }}</td>
+    </tr>
+  </tbody>
+</table>

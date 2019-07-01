@@ -1,0 +1,10 @@
+<div *ngIf="song" class="music-player clearfix">
+  <iframe
+    [src]="sanitizedUrl"
+    width="100%"
+    height="80"
+    frameborder="0"
+    allowtransparency="true"
+    allow="encrypted-media"
+  ></iframe>
+</div>
